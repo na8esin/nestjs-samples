@@ -27,6 +27,7 @@
     "apollo-server-express": "2.12.0",
     "class-transformer": "0.2.3",
     "class-validator": "0.11.1",
+    "dataloader": "^2.0.0",
     "graphql": "14.6.0",
     "graphql-subscriptions": "1.1.0",
     "reflect-metadata": "0.1.13",
