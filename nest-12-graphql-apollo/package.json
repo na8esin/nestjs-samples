@@ -1,0 +1,53 @@
+{
+  "name": "nest-typescript-starter",
+  "version": "1.0.0",
+  "description": "Nest TypeScript starter repository",
+  "license": "MIT",
+  "scripts": {
+    "gt": "ts-node src/generate-typings",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "ts-node src/main",
+    "prestart:prod": "npm run build",
+    "start:prod": "node dist/main.js",
+    "test": "jest --detectOpenHandles"
+  },
+  "dependencies": {
+    "@nestjs/common": "6.8.3",
+    "@nestjs/core": "6.8.3",
+    "@nestjs/graphql": "6.5.3",
+    "@nestjs/platform-express": "6.8.3",
+    "@nestjsplus/ioredis": "^1.0.6",
+    "apollo-server-express": "2.9.6",
+    "class-transformer": "0.2.3",
+    "class-validator": "0.10.2",
+    "graphql": "14.5.8",
+    "graphql-subscriptions": "1.1.0",
+    "reflect-metadata": "0.1.13",
+    "rxjs": "6.5.3",
+    "typescript": "3.6.4"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^6.8.3",
+    "@types/ioredis": "^4.0.18",
+    "@types/jest": "^24.0.19",
+    "@types/node": "12.11.1",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "ts-node": "8.4.1",
+    "tslint": "5.20.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
