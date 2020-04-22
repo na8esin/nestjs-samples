@@ -1,0 +1,6 @@
+endpoint: https://eu1.prisma.sh/na8esinmpst-5183c2/nest-graphql-prisma/dev
+datamodel: datamodel.prisma
+
+generate:
+  - generator: typescript-client
+    output: ./generated/prisma-client/
