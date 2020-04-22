@@ -1,32 +1,52 @@
+
 /** ------------------------------------------------------
  * THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
  * -------------------------------------------------------
  */
 
 /* tslint:disable */
-export abstract class CreateCatInput {
-  name?: string;
-  age?: number;
+/* eslint-disable */
+export class PostInput {
+    id?: number;
+    name?: string;
 }
 
-export abstract class Cat {
-  id?: number;
-  name?: string;
-  age?: number;
-}
-
-export abstract class IMutation {
-  abstract createCat(createCatInput?: CreateCatInput): Cat | Promise<Cat>;
+export class CreateCatInput {
+    name?: string;
+    age?: number;
 }
 
 export abstract class IQuery {
-  abstract getCats(): Cat[] | Promise<Cat[]>;
+    abstract authors(): Author[] | Promise<Author[]>;
 
-  abstract cat(id: string): Cat | Promise<Cat>;
+    abstract getCats(): Cat[] | Promise<Cat[]>;
 
-  abstract temp__(): boolean | Promise<boolean>;
+    abstract cat(id: string): Cat | Promise<Cat>;
+}
+
+export class Author {
+    id?: number;
+    name?: string;
+    age?: number;
+}
+
+export abstract class IMutation {
+    abstract createCat(createCatInput?: CreateCatInput): Cat | Promise<Cat>;
+
+    abstract upvotePost(post?: PostInput): Post | Promise<Post>;
+}
+
+export class Post {
+    id?: number;
+    name?: string;
 }
 
 export abstract class ISubscription {
-  abstract catCreated(): Cat | Promise<Cat>;
+    abstract catCreated(): Cat | Promise<Cat>;
+}
+
+export class Cat {
+    id?: number;
+    name?: string;
+    age?: number;
 }

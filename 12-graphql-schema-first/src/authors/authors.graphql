@@ -1,0 +1,10 @@
+type Query {
+  authors: [Author]
+}
+
+type Author {
+  id: Int
+  name: String
+  age: Int
+}
+
