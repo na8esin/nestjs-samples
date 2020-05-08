@@ -5,13 +5,14 @@ import { Cat } from '../graphql.schema';
 import { CatsGuard } from './cats.guard';
 import { CatsService } from './cats.service';
 import { CreateCatDto } from './dto/create-cat.dto';
-import { User } from './user';
+import { User } from '../common/decorators/user.decorator';
+import { UserEntity } from 'src/users/user.entity';
 
 const pubSub = new PubSub();
 
 @Resolver('Cat')
 export class CatsResolvers {
-  constructor(private readonly catsService: CatsService) {}
+  constructor(private readonly catsService: CatsService) { }
 
   @Query()
   @UseGuards(CatsGuard)
@@ -36,7 +37,7 @@ export class CatsResolvers {
 
   @Mutation()
   async upvotePost(
-    @User() user
+    @User() user: UserEntity
   ) {
     console.log(user);
     return user;
