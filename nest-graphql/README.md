@@ -1,5 +1,7 @@
 # トピックス
 - GraphQL
+- Express
+- axios
 - TypeORM
 - Redis
 - PM2
