@@ -36,7 +36,7 @@ async function bootstrap() {
 
   await app.listen(port, async () => {
     // 下記で起動時のDB接続の確認もできる
-    await createConnection(configService.getConnectionOptions('master'));
+    //await createConnection(configService.getConnectionOptions('master'));
   }).catch((e) => {
     logger.log(e);
   });

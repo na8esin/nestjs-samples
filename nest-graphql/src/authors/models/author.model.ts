@@ -1,5 +1,5 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
-import { Post } from '';
+import { Post } from '../../posts/models/post.model';
 
 @ObjectType()
 export class Author {
