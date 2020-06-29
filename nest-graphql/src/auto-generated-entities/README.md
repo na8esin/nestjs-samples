@@ -1,0 +1,2 @@
+typeorm-model-generatorで生成されたentityを格納しておくところ。
+graphql.schemaのclassを継承しないといけないのでそのままは使えない

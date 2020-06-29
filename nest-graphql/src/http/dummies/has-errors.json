@@ -1,0 +1,26 @@
+{
+  "data": {
+    "usersId": "1",
+    "customerId": 509,
+    "spot": "立川",
+    "spotUrl": "https://www.city.tachikawa.lg.jp/",
+    "note": "add privateApi",
+    "common": {
+      "customer_id": "509"
+    },
+    "role": "000",
+    "statusCode": "001",
+    "childStatusCode": "000",
+    "grandsonStatusCode": "000",
+    "timeTo": "01:00"
+  },
+  "errors": {
+    "date": {
+      "maxLength": "アポ日は10文字以内で入力してください",
+      "format": "アポ日の値が不正です"
+    },
+    "timeFrom": {
+      "_required": "開始時間を選択してください"
+    }
+  }
+}

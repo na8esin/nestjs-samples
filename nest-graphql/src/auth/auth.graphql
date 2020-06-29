@@ -1,0 +1,11 @@
+type Query {
+  """
+  現在、client_id:"demo", client_secret:"abcdefgh"でログインできます
+  """
+  login(client_id: String, client_secret: String): Authorization
+}
+
+"access_tokenをAuthorization: Bearerヘッダに付与して利用してください"
+type Authorization {
+  access_token: String!
+}
