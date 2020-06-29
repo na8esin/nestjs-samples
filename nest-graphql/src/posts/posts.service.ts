@@ -1,0 +1,5 @@
+class PostsService {
+    findAll(dto) {
+
+    }
+}
