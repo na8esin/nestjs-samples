@@ -6,3 +6,4 @@
 - Redis
 - PM2
 - JWT + Bearer
+- Multitenancy
