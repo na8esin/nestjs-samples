@@ -11,9 +11,4 @@ export const clientCredentialDummy: ClientCredential[] = [
     clientSecret: 'abcdefgh',
     userId: 1,
   },
-  {
-    clientId: 'recruit',
-    clientSecret: 'qwertyui',
-    userId: 1,
-  },
 ];
