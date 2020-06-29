@@ -9,6 +9,7 @@ import {
   createLogger,
   expressWinstonAccessLogOption
 } from './createLogger';
+import { createLimiter } from './createLimiter';
 
 const port = process.env.PORT || 3000;
 
@@ -27,6 +28,7 @@ async function bootstrap() {
   // TODO: 起動時にDBとredisの接続確認が必要?
 
   app.use(expressWinston.logger(expressWinstonAccessLogOption));
+  app.use(createLimiter());
 
   const configService = app
     .select(ConfigModule)
