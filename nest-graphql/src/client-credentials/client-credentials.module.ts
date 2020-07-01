@@ -1,15 +1,14 @@
 import { Module } from '@nestjs/common';
 import { ClientCredentialsService } from './client-credentials.service';
 import { MockClientCredentialsService } from './mock-client-credentials.service';
-import { RedisModule } from '@nestjsplus/ioredis';
+import { RedisModule } from 'nestjs-redis'
 import { ConfigModule } from '../config/config-module';
 import { ConfigService } from '../config/config.service';
-import { RedisModuleOptions } from '@nestjsplus/ioredis/dist/interfaces/redis-module-options.interface';
 import { clientCredentialDummy } from './client-credentials.dummydata';
 
-const RedisModuleRegister = RedisModule.registerAsync({
+const RedisModuleRegister = RedisModule.forRootAsync({
   imports: [ConfigModule],
-  useFactory: async (configService: ConfigService): Promise<RedisModuleOptions> => (
+  useFactory: async (configService: ConfigService): Promise<any> => (
     configService.getRedisOptions()
   ),
   inject: [ConfigService],
@@ -19,14 +18,12 @@ const clientCredentialsServiceProvider = {
   provide: ClientCredentialsService,
   useClass:
     process.env.MOCK_MODE === 'true'
-      || process.env.NODE_ENV === 'test'
-      || process.env.NODE_ENV === 'development'
       ? MockClientCredentialsService
       : ClientCredentialsService,
 }
 
 // ダミークラス
-class RedisService {
+class MockRedisService {
   client = {
     set: () => { },
     get: () => {
@@ -36,9 +33,11 @@ class RedisService {
 }
 
 @Module({
+  imports: [
+    RedisModuleRegister
+  ],
   providers: [
     clientCredentialsServiceProvider,
-    RedisService
   ],
   exports: [clientCredentialsServiceProvider],
 })

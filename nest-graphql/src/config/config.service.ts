@@ -2,8 +2,6 @@ import * as dotenv from 'dotenv';
 import * as Joi from '@hapi/joi';
 import * as fs from 'fs';
 import { ConnectionOptions } from 'typeorm';
-import { RedisModuleOptions }
-  from '@nestjsplus/ioredis/dist/interfaces/redis-module-options.interface';
 import { TypeormLogger } from '../typeorm.logger';
 
 
@@ -60,7 +58,7 @@ export class ConfigService {
     return this.envConfig[key] as boolean;
   }
 
-  getRedisOptions(): RedisModuleOptions {
+  getRedisOptions() {
     return {
       host: this.get('REDIS_HOST'),
       port: parseInt(this.get('REDIS_PORT')),

@@ -11,7 +11,7 @@ export class MockClientCredentialsService {
     clientId: string,
     clientSecret: string,
   ): Promise<ClientCredential | undefined> {
-    return this.clientCredentials.find(
+    return await this.clientCredentials.find(
       e =>
         e.clientId === clientId && e.clientSecret === clientSecret
     );
