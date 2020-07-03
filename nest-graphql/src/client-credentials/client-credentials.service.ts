@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import * as Redis from 'ioredis';
 import { RedisService } from 'nestjs-redis';
 import { ClientCredential } from './client-credentials';
-import { clientCredentialDummy } from './client-credentials.dummydata';
 
 // redisの取得登録を行う
 // やってることは、redisを使いやすくしているだけ
